@@ -7,7 +7,9 @@
     <a href="#">{{ nav_item.title }}</a>
     <ul class="dropdown-menu">
         {%- for nav_item in nav_item.children %}
-            {% include "nav-sub.html" %}
+            {% if nav_item.title != "hidden" %}
+                {% include "nav-sub.html" %}
+            {% endif %}
         {%- endfor %}
     </ul>
   </li>
