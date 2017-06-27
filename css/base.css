@@ -210,6 +210,8 @@ footer {
 
 /* First level of nav */
 .bs-sidenav {
+    margin-top: 30px;
+    margin-bottom: 30px;
     padding-top:    10px;
     padding-bottom: 10px;
     border-radius: 5px;
@@ -234,16 +236,36 @@ footer {
     border-right: 1px solid;
 }
 
-/* Nav: second level (shown on .active) */
+/* Default show all ToC */
 .bs-sidebar .nav .nav {
-    display: none; /* Hide by default, but at >768px, show it */
-    margin-bottom: 8px;
+    display: block;
 }
+
 .bs-sidebar .nav .nav > li > a {
     padding-top:    3px;
     padding-bottom: 3px;
     padding-left: 30px;
     font-size: 90%;
+}
+
+/* Third level */
+.bs-sidebar .nav .nav .nav > li > a {
+    padding-left: 45px;
+}
+
+/* Fourth level */
+.bs-sidebar .nav .nav .nav .nav > li > a {
+    padding-left: 60px;
+}
+
+/* Fifth level */
+.bs-sidebar .nav .nav .nav .nav .nav > li > a {
+    padding-left: 75px;
+}
+
+/* Sixth level */
+.bs-sidebar .nav .nav .nav .nav .nav .nav > li > a {
+    padding-left: 90px;
 }
 
 /* Show and affix the side nav when space allows it */
