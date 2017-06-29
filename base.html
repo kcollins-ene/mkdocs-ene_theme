@@ -51,8 +51,30 @@
         </script>
         {%- endif %}
       {%- endblock %}
+
+
       
       {%- block extrahead %} {% endblock %}
+
+    {# Figure out if we should collapse the ToC on this page or not #}
+    {% if 'collapse_toc' in page.meta %}
+      {% if page.meta.collapse_toc|first == 'true' %}
+        {% set collapse_toc = True %}
+      {% else %}
+        {% set collapse_toc = False %}
+      {% endif %}
+    {% elif 'collapse_toc' in config.extra %}
+      {% set collapse_toc = config.extra.collapse_toc %}
+    {% endif %}
+    {% if collapse_toc %}
+    <style>
+        /* Collapse ToC */
+        .bs-sidebar .nav .nav {
+            display: none;
+        }
+    </style>
+    {% endif %}
+
     </head>
 
     <body{% if page and page.is_homepage %} class="homepage"{% endif %}>
